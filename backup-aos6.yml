@@ -1,0 +1,10 @@
+---
+- name: AOS6 >> backup configuration
+  ale_aos_command:
+    host: '{{ ansible_host }}'
+    timing: true
+    username: '{{ ale_username }}'
+    password: '{{ ale_password }}'
+    command: show configuration snapshot
+  register: remote_backup_config
+  when: device_os == 'aos6'
