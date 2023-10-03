@@ -5,7 +5,7 @@ ansible_python_interpreter: "python3"
 # Alcatel login credentials
 # Should be stored in vault encrypted variable file for production use
 ale_username: admin
-ale_password: switch
+ale_password: switch123
 
 # Set export destinations
 # backup_local -> export to local "backups" folder
