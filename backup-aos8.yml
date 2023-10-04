@@ -42,8 +42,8 @@
 
 - name: PRINT >> remote backup configuration
   debug:
-    msg: "{{ remote_backup_config.json['result']['output'].stdout }}"
-    verbosity: 2    
+    msg: "{{ remote_backup_config.json['result']['output'] }}"
+    verbosity: 0    
 
 - name: AOS8 >> rest logout
   uri:
