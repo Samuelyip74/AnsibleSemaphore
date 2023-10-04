@@ -9,17 +9,6 @@
   ignore_errors: true
   register: port_443_state
   when: device_os == 'aos8'
-
-- name: AOS8 >> enable webserver when needed
-  ale_aos_config:
-    host: '{{ ansible_host }}'
-    username: '{{ ale_username }}'
-    password: '{{ ale_password }}'
-    commands:
-      - webview server enable
-      - webview access enable
-  when: device_os == 'aos8' and port_443_state.failed
-
 - name: DEBUG >> port 443 state
   debug:
     var: port_443_state
