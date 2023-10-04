@@ -40,10 +40,9 @@
   register: remote_backup_config
   when: device_os == 'aos8'
 
-- name: DEBUG >> remote backup configuration
+- name: DEBUG >> print remote backup configuration
   debug:
-    var: remote_backup_config.stdout_lines
-    verbosity: 2
+    msg: {{ remote_backup_config.stdout }}
 
 - name: AOS8 >> rest logout
   uri:
