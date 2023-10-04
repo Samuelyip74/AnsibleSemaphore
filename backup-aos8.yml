@@ -38,13 +38,11 @@
       Cookie: "{{ login['cookies_string'] }}"
       Accept: application/vnd.alcatellucentaos+json
   register: remote_backup_config
-  debug:
-    var: remote_backup_config.stdout_lines
   when: device_os == 'aos8'
 
 - name: DEBUG >> remote backup configuration
   debug:
-    var: remote_backup_config
+    var: remote_backup_config.stdout_lines
     verbosity: 2
 
 - name: AOS8 >> rest logout
