@@ -11,7 +11,7 @@
     mode: 0644
   when: device_os == 'aos6'
 
-- name: LOCAL >> aos8 copy configuration to local folder
+- name: REMOTE >> scp config file to remote server
   copy:
     content: "{{ remote_backup_config.json['result']['output'] }}"
     dest: "backups/{{ device_vendor }}/{{ inventory_hostname }}/{{ ansible_host }}-{{lookup('pipe','date +%Y%m%d')}}.cfg"
